@@ -17,7 +17,7 @@
     "url": "https://github.com/1244832273/seed-monorepo/issues"
   },
   "homepage": "https://github.com/1244832273/seed-monorepo#readme",
-  "devDependencies": {
-    "typescript": "^4.6.3"
+  "dependencies": {
+    "react": "^18.0.0"
   }
 }
