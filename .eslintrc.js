@@ -1,9 +1,7 @@
 module.exports = {
-  extends: [
-    '@seed/config-eslint-config',
-  ],
+  extends: ['@seed/eslint-config-seed'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
-    "react-hooks/exhaustive-deps": "warn"
+    'react-hooks/exhaustive-deps': 'warn',
   },
 };

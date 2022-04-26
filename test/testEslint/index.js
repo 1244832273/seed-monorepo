@@ -1,19 +1,18 @@
 /*
  * @Author: 鲁田文
  * @Date: 2022-04-26 10:58:54
- * @LastEditTime: 2022-04-26 14:33:09
+ * @LastEditTime: 2022-04-26 15:30:02
  * @LastEditors: 鲁田文
- * @Description: 
+ * @Description:
  */
-import React from 'react'
+import React, { useEffect } from 'react';
 
 export default function Index() {
-
+  let a = 1;
   useEffect(() => {
-                      a = a + 1
-  }, []);
-  return (
-    <div>index</div>
-  )
+    if (a) {
+      console.log('1', 1);
+    }
+  }, [a]);
+  return <div>index</div>;
 }
-
