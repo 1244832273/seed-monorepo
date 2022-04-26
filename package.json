@@ -19,5 +19,8 @@
   "homepage": "https://github.com/1244832273/seed-monorepo#readme",
   "dependencies": {
     "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "@seed/config-eslint-config": "workspace:^0.1.0"
   }
 }

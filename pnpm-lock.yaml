@@ -4,9 +4,12 @@ importers:
 
   .:
     specifiers:
+      '@seed/config-eslint-config': workspace:^0.1.0
       react: ^18.0.0
     dependencies:
       react: 18.0.0
+    devDependencies:
+      '@seed/config-eslint-config': link:packages/config/eslint-config
 
   packages/config/eslint-config:
     specifiers:
