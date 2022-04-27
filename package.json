@@ -21,6 +21,6 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@seed/eslint-config-seed": "workspace:^0.1.0"
+    "@seed/eslint-config-seed": "workspace:*"
   }
 }
