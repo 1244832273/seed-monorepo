@@ -1,0 +1,22 @@
+{
+  "name": "@seed/seed",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "seed": "bin/seed.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.2.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^8.2.3",
+    "log-symbols": "^5.1.0",
+    "ora": "^6.1.0"
+  }
+}
