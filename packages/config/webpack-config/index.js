@@ -2,6 +2,7 @@
 
 const path = require('path');
 const defaultLoader = require('./loaders/defaultLoader');
+const defaultPlugin = require('./plugins/defaultPlugin');
 
 const cwd = process.cwd();
 
@@ -33,11 +34,11 @@ const webpackConfigDefault = {
   module: {
     rules: defaultLoader(),
   },
-  plugins: [],
+  plugins: defaultPlugin(),
 };
 
 // 预留获取根目录配置
 // todo 是否需要搞个类 处理webpack
-module.exports = function webpackConfig() {
+module.exports = function getWebpackConfig() {
   return webpackConfigDefault;
 };
