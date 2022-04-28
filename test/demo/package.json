@@ -1,6 +1,6 @@
 {
-  "name": "@seed/seed-webpack-dev",
-  "version": "0.1.0",
+  "name": "demo",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@seed/webpack-config": "workspace:*",
-    "error-overlay-webpack-plugin": "^1.1.0",
-    "webpack-merge": "^5.8.0"
+    "@seed/seed-webpack-dev": "workspace:^0.1.0"
   }
 }
