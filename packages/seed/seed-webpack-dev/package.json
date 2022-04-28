@@ -1,0 +1,16 @@
+{
+  "name": "@seed/seed-webpack-dev",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@seed/webpack-config": "workspace:*",
+    "error-overlay-webpack-plugin": "^1.1.0"
+  }
+}

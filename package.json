@@ -21,6 +21,9 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@seed/eslint-config-seed": "workspace:*"
+    "@seed/eslint-config-seed": "workspace:*",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
   }
 }
