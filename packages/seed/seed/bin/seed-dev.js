@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander');
-const seedWebpackDev = require('@seed/seed-webpack-dev');
+const seedWebpackDev = require('@seedltw/seed-webpack-dev');
 
 function startServe() {
   seedWebpackDev();

@@ -6,7 +6,7 @@ const path = require('path');
 const WebpackDevServer = require('webpack-dev-server');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 
-const getWebpackConfig = require('@seed/webpack-config');
+const getWebpackConfig = require('@seedltw/webpack-config');
 
 const devConfig = {
   mode: 'development',

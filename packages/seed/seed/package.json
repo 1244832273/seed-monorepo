@@ -12,8 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@seed/seed-webpack-dev": "workspace:*",
-    "@seed/webpack-config": "workspace:*",
+    "@seedltw/seed-webpack-dev": "workspace:*",
     "chalk": "^5.0.1",
     "commander": "^9.2.0",
     "download-git-repo": "^3.0.2",

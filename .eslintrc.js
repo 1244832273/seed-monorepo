@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@seed/eslint-config-seed'],
+  extends: ['@seedltw/eslint-config-seed'],
   rules: {
     '@typescript-eslint/no-var-requires': 'off',
   },
