@@ -20,7 +20,7 @@ importers:
       react-router-dom: 6.3.0_react-dom@18.1.0+react@18.1.0
       webpack-merge: 5.8.0
     devDependencies:
-      '@seed/eslint-config-seed': link:packages/config/eslint-config
+      '@seed/eslint-config-seed': link:packages/libs/eslint-config
       typescript: 4.6.3
       webpack: 5.72.0_webpack-cli@4.9.2
       webpack-cli: 4.9.2_webpack@5.72.0
@@ -88,7 +88,7 @@ importers:
       '@babel/preset-env': ^7.18.0
       '@babel/preset-react': ^7.17.12
       '@babel/preset-typescript': ^7.17.12
-      '@seed/webpack-config': workspace:*
+      '@seed/webpack-config': workspace:^0.1.0
       babel-loader: ^8.2.5
       css-loader: ^6.7.1
       error-overlay-webpack-plugin: ^1.1.0
@@ -104,7 +104,7 @@ importers:
       '@babel/preset-env': 7.18.0_@babel+core@7.18.0
       '@babel/preset-react': 7.17.12_@babel+core@7.18.0
       '@babel/preset-typescript': 7.17.12_@babel+core@7.18.0
-      '@seed/webpack-config': link:../../config/webpack-config
+      '@seed/webpack-config': link:../../libs/webpack-config
       babel-loader: 8.2.5_4a8ec1db6a2ca93143db353f09248d05
       css-loader: 6.7.1_webpack@5.72.0
       error-overlay-webpack-plugin: 1.1.0_typescript@4.6.3+webpack@5.72.0
@@ -114,55 +114,6 @@ importers:
       resolve-url-loader: 5.0.0
       sass-loader: 13.0.0_webpack@5.72.0
       webpack-dev-server: 4.9.0_webpack-cli@4.9.2+webpack@5.72.0
-
-  test/demo:
-    specifiers:
-      '@ant-design/icons': ^4.7.0
-      '@babel/core': ^7.18.0
-      '@babel/plugin-transform-runtime': ^7.18.0
-      '@babel/preset-env': ^7.18.0
-      '@babel/preset-react': ^7.17.12
-      '@babel/preset-typescript': ^7.17.12
-      '@babel/runtime': ^7.18.0
-      '@seed/seed-webpack-dev': workspace:^0.1.0
-      '@seed/webpack-config': workspace:^0.1.0
-      autoprefixer: ^10.4.7
-      babel-loader: ^8.2.5
-      core-js: '2'
-      css-loader: ^6.7.1
-      cssnano: ^5.1.9
-      less: ^4.1.2
-      less-loader: ^11.0.0
-      postcss: ^8.4.14
-      postcss-loader: ^7.0.0
-      resolve-url-loader: ^5.0.0
-      sass-loader: ^13.0.0
-      slicedToArray: link:@babel/runtime/helpers/slicedToArray
-      webpack-merge: ^5.8.0
-    dependencies:
-      '@ant-design/icons': 4.7.0
-      '@babel/core': 7.18.0
-      '@babel/plugin-transform-runtime': 7.18.0_@babel+core@7.18.0
-      '@babel/preset-env': 7.18.0_@babel+core@7.18.0
-      '@babel/preset-react': 7.17.12_@babel+core@7.18.0
-      '@babel/preset-typescript': 7.17.12_@babel+core@7.18.0
-      '@babel/runtime': 7.18.0
-      '@seed/webpack-config': link:../../packages/config/webpack-config
-      autoprefixer: 10.4.7_postcss@8.4.14
-      babel-loader: 8.2.5_@babel+core@7.18.0
-      core-js: 2.6.12
-      css-loader: 6.7.1
-      cssnano: 5.1.9_postcss@8.4.14
-      less: 4.1.2
-      less-loader: 11.0.0_less@4.1.2
-      postcss: 8.4.14
-      postcss-loader: 7.0.0_postcss@8.4.14
-      resolve-url-loader: 5.0.0
-      sass-loader: 13.0.0
-      slicedToArray: link:@babel/runtime/helpers/slicedToArray
-      webpack-merge: 5.8.0
-    devDependencies:
-      '@seed/seed-webpack-dev': link:../../packages/seed/seed-webpack-dev
 
 packages:
 
@@ -182,20 +133,6 @@ packages:
 
   /@ant-design/icons-svg/4.2.1:
     resolution: {integrity: sha1-hjDajrRHGkqr2u19H/apfcss8Fo=}
-    dev: false
-
-  /@ant-design/icons/4.7.0:
-    resolution: {integrity: sha1-jDy+ClVrqSr13H0ecMCyW1F5rw8=}
-    engines: {node: '>=8'}
-    peerDependencies:
-      react: '>=16.0.0'
-      react-dom: '>=16.0.0'
-    dependencies:
-      '@ant-design/colors': 6.0.0
-      '@ant-design/icons-svg': 4.2.1
-      '@babel/runtime': 7.18.0
-      classnames: 2.3.1
-      rc-util: 5.21.2
     dev: false
 
   /@ant-design/icons/4.7.0_react-dom@18.1.0+react@18.1.0:
@@ -2263,20 +2200,6 @@ packages:
       webpack: 5.72.0_webpack-cli@4.9.2
     dev: false
 
-  /babel-loader/8.2.5_@babel+core@7.18.0:
-    resolution: {integrity: sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==}
-    engines: {node: '>= 8.9'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-      webpack: '>=2'
-    dependencies:
-      '@babel/core': 7.18.0
-      find-cache-dir: 3.3.2
-      loader-utils: 2.0.2
-      make-dir: 3.1.0
-      schema-utils: 2.7.0
-    dev: false
-
   /babel-plugin-dynamic-import-node/2.3.3:
     resolution: {integrity: sha1-hP2hnJduxcbe/vV/lCez3vZuF6M=}
     dependencies:
@@ -2748,12 +2671,6 @@ packages:
       semver: 7.0.0
     dev: false
 
-  /core-js/2.6.12:
-    resolution: {integrity: sha1-2TM9+nsGXjR8xWgiGdb2kIWcwuw=}
-    deprecated: core-js@<3.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Please, upgrade your dependencies to the actual version of core-js.
-    requiresBuild: true
-    dev: false
-
   /core-util-is/1.0.3:
     resolution: {integrity: sha1-pgQtNjTCsn6TKPg3uWX6yDgI24U=}
     dev: false
@@ -2795,22 +2712,6 @@ packages:
       postcss: ^8.0.9
     dependencies:
       postcss: 8.4.14
-    dev: false
-
-  /css-loader/6.7.1:
-    resolution: {integrity: sha512-yB5CNFa14MbPJcomwNh3wLThtkZgcNyI2bNMRt8iE5Z8Vwl7f8vQXFAzn2HDOJvtDq2NTZBUGMSUNNyrv3/+cw==}
-    engines: {node: '>= 12.13.0'}
-    peerDependencies:
-      webpack: ^5.0.0
-    dependencies:
-      icss-utils: 5.1.0_postcss@8.4.14
-      postcss: 8.4.14
-      postcss-modules-extract-imports: 3.0.0_postcss@8.4.14
-      postcss-modules-local-by-default: 4.0.0_postcss@8.4.14
-      postcss-modules-scope: 3.0.0_postcss@8.4.14
-      postcss-modules-values: 4.0.0_postcss@8.4.14
-      postcss-value-parser: 4.2.0
-      semver: 7.3.7
     dev: false
 
   /css-loader/6.7.1_webpack@5.72.0:
@@ -3239,7 +3140,7 @@ packages:
     dev: true
 
   /errno/0.1.8:
-    resolution: {integrity: sha1-i7Ppx9Rjvkl2/4iPdrSAnrwugR8=}
+    resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
     hasBin: true
     requiresBuild: true
     dependencies:
@@ -3852,7 +3753,7 @@ packages:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
 
   /fsevents/2.3.2:
-    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=}
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -4628,17 +4529,6 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
-  /less-loader/11.0.0_less@4.1.2:
-    resolution: {integrity: sha512-9+LOWWjuoectIEx3zrfN83NAGxSUB5pWEabbbidVQVgZhN+wN68pOvuyirVlH1IK4VT1f3TmlyvAnCXh8O5KEw==}
-    engines: {node: '>= 14.15.0'}
-    peerDependencies:
-      less: ^3.5.0 || ^4.0.0
-      webpack: ^5.0.0
-    dependencies:
-      klona: 2.0.5
-      less: 4.1.2
-    dev: false
-
   /less-loader/11.0.0_less@4.1.2+webpack@5.72.0:
     resolution: {integrity: sha512-9+LOWWjuoectIEx3zrfN83NAGxSUB5pWEabbbidVQVgZhN+wN68pOvuyirVlH1IK4VT1f3TmlyvAnCXh8O5KEw==}
     engines: {node: '>= 14.15.0'}
@@ -4801,7 +4691,7 @@ packages:
     dev: false
 
   /make-dir/2.1.0:
-    resolution: {integrity: sha1-XwMQ4YuL6JjMBwCSlaMK5B6R5vU=}
+    resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
     engines: {node: '>=6'}
     requiresBuild: true
     dependencies:
@@ -4871,7 +4761,7 @@ packages:
       mime-db: 1.52.0
 
   /mime/1.6.0:
-    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=}
+    resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
     engines: {node: '>=4'}
     hasBin: true
     requiresBuild: true
@@ -4949,7 +4839,7 @@ packages:
     dev: true
 
   /needle/2.9.1:
-    resolution: {integrity: sha1-ItHf++NJDCuD4wH3cJtnNs2PJoQ=}
+    resolution: {integrity: sha512-6R9fqJ5Zcmf+uYaFgdIHmLwNldn5HbK8L5ybn7Uz+ylX/rnOsSp1AHcvQSrCaFN+qNM1wpymHqD7mVasEOlHGQ==}
     engines: {node: '>= 4.4.x'}
     hasBin: true
     requiresBuild: true
@@ -5432,19 +5322,6 @@ packages:
       postcss: ^8.2.15
     dependencies:
       postcss: 8.4.14
-    dev: false
-
-  /postcss-loader/7.0.0_postcss@8.4.14:
-    resolution: {integrity: sha512-IDyttebFzTSY6DI24KuHUcBjbAev1i+RyICoPEWcAstZsj03r533uMXtDn506l6/wlsRYiS5XBdx7TpccCsyUg==}
-    engines: {node: '>= 14.15.0'}
-    peerDependencies:
-      postcss: ^7.0.0 || ^8.0.1
-      webpack: ^5.0.0
-    dependencies:
-      cosmiconfig: 7.0.1
-      klona: 2.0.5
-      postcss: 8.4.14
-      semver: 7.3.7
     dev: false
 
   /postcss-loader/7.0.0_webpack@5.72.0:
@@ -6359,17 +6236,6 @@ packages:
       react-dom: 18.1.0_react@18.1.0
     dev: false
 
-  /rc-util/5.21.2:
-    resolution: {integrity: sha512-QuuZ2tKMScGtxSx3rLzgPGGDZm/np7phMqA7OcDidSf44abvSk+AdtdD7ZvQPvCEtdC6nCSI5tEVnUaYjjD9/w==}
-    peerDependencies:
-      react: '>=16.9.0'
-      react-dom: '>=16.9.0'
-    dependencies:
-      '@babel/runtime': 7.18.0
-      react-is: 16.13.1
-      shallowequal: 1.1.0
-    dev: false
-
   /rc-util/5.21.2_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-QuuZ2tKMScGtxSx3rLzgPGGDZm/np7phMqA7OcDidSf44abvSk+AdtdD7ZvQPvCEtdC6nCSI5tEVnUaYjjD9/w==}
     peerDependencies:
@@ -6717,29 +6583,6 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=}
-    dev: false
-
-  /sass-loader/13.0.0:
-    resolution: {integrity: sha512-IHCFecI+rbPvXE2zO/mqdVFe8MU7ElGrwga9hh2H65Ru4iaBJAMRteum1c4Gsxi9Cq1FOtTEDd6+/AEYuQDM4Q==}
-    engines: {node: '>= 14.15.0'}
-    peerDependencies:
-      fibers: '>= 3.1.0'
-      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-      sass: ^1.3.0
-      sass-embedded: '*'
-      webpack: ^5.0.0
-    peerDependenciesMeta:
-      fibers:
-        optional: true
-      node-sass:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-    dependencies:
-      klona: 2.0.5
-      neo-async: 2.6.2
     dev: false
 
   /sass-loader/13.0.0_webpack@5.72.0:
