@@ -26,7 +26,7 @@ const devServer = {
   // 这个服务器会同时以static-directory目录作为跟路径启动
   // 这样的话就可以访问到static/directory下的资源了
   static: {
-    directory: path.join(__dirname, 'public'),
+    directory: path.resolve(__dirname, 'public'),
   },
   historyApiFallback: {
     // disableDotRule: true,

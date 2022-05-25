@@ -15,7 +15,7 @@ const DEFAULT = [
   // 生成使用的模板为public/index.html
   new htmlWebpackPlugin({
     filename: 'index.html',
-    template: path.resolve(process.cwd(), 'public/index.html'),
+    template: path.resolve(__dirname, '../public/index.html'),
   }),
   // new CleanWebpackPlugin(),
   new WebpackBar(),
