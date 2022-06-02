@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "release": "changeset publish --registry=https://registry.npmjs.com/",
     "changeset": "changeset",
     "versions": "changeset version",
     "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
