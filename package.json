@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "changeset": "changeset",
+    "versions": "changeset version",
+    "clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules",
     "preinstall": "npx only-allow pnpm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +33,8 @@
     "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
-    "@seedltw/eslint-config-seed": "workspace:*"
+    "@changesets/cli": "^2.22.0",
+    "@seedltw/eslint-config-seed": "workspace:*",
+    "rimraf": "^3.0.2"
   }
 }
