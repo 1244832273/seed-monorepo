@@ -41,6 +41,7 @@ const webpackConfigDefault = {
 
 const getCompiler = (config) => {
   const combineConfig = merge(webpackConfigDefault, config);
+  console.log('打包配置', combineConfig);
   const compiler = webpcak(combineConfig);
   return compiler;
 };

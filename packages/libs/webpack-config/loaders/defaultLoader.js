@@ -32,5 +32,7 @@ const DEFAULT = [
 ];
 
 module.exports = function defaultLoader() {
-  return [...DEFAULT, babelLoader(), cssLoader()];
+  const cssLoaderList = cssLoader();
+  const babelLoaderList = babelLoader();
+  return [...DEFAULT, ...cssLoaderList, ...babelLoaderList];
 };

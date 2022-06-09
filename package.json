@@ -36,6 +36,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
     "@seedltw/eslint-config-seed": "workspace:*",
+    "chalk": "4.1.1",
     "rimraf": "^3.0.2"
   }
 }

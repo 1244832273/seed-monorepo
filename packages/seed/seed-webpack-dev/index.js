@@ -10,9 +10,6 @@ const getWebpackConfig = require('@seedltw/webpack-config');
 
 const devConfig = {
   mode: 'development',
-  output: {
-    publicPath: '/',
-  },
   plugins: [new ErrorOverlayPlugin()],
   devtool: 'cheap-module-source-map',
   cache: {
