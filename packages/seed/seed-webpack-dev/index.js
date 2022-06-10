@@ -29,6 +29,7 @@ const devServer = {
     // disableDotRule: true,
     index: '/',
   },
+  open: true,
   // 默认为true
   hot: true,
   // 是否开启代码压缩
@@ -38,7 +39,7 @@ const devServer = {
 };
 
 module.exports = function seedWebpackDev() {
-  const HOST = process.env.HOST || '0.0.0.0';
+  const HOST = process.env.HOST || 'local-ip';
   const { getCompiler } = getWebpackConfig();
   const compiler = getCompiler(devConfig);
   const serve = new WebpackDevServer(compiler, devServer);
