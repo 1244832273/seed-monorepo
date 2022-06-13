@@ -1,5 +1,5 @@
 {
-  "name": "@seedltw/seed-webpack-build",
+  "name": "@seedltw/message-utils",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@seedltw/message-utils": "workspace:*",
-    "@seedltw/webpack-config": "workspace:*"
+    "chalk": "4.1.1"
   }
 }

@@ -89,8 +89,10 @@ importers:
 
   packages/seed/seed-webpack-build:
     specifiers:
+      '@seedltw/message-utils': workspace:^0.0.0
       '@seedltw/webpack-config': workspace:^0.1.1
     dependencies:
+      '@seedltw/message-utils': link:../../utils/message-utils
       '@seedltw/webpack-config': link:../../libs/webpack-config
 
   packages/seed/seed-webpack-dev:
@@ -133,6 +135,12 @@ importers:
       resolve-url-loader: 5.0.0
       sass: 1.52.2
       sass-loader: 13.0.0_sass@1.52.2
+
+  packages/utils/message-utils:
+    specifiers:
+      chalk: 4.1.1
+    dependencies:
+      chalk: 4.1.1
 
 packages:
 
@@ -2763,7 +2771,6 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
-    dev: true
 
   /chalk/4.1.2:
     resolution: {integrity: sha1-qsTit3NKdAhnrrFr8CqtVWoeegE=}
@@ -4384,7 +4391,7 @@ packages:
     engines: {node: '>=4'}
 
   /has-flag/4.0.0:
-    resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
+    resolution: {integrity: sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=}
     engines: {node: '>=8'}
 
   /has-property-descriptors/1.0.0:
