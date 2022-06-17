@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const resolve = require.resolve;
 
 // @babel/preset-env + entry = 注入语法的下限是 target 浏览器，上限是当前版本 core-js
 // @babel/preset-env + usage = 注入语法的下限是 target 浏览器，上限是源代码与当前版本 core-js 交集
@@ -9,13 +10,13 @@ const DEFAULT = [
     test: /\.(t|j)sx?$/,
     use: [
       {
-        loader: 'babel-loader',
+        loader: resolve('babel-loader'),
         options: {
           cacheDirectory: true,
           cacheCompression: true,
           presets: [
             [
-              '@babel/preset-env', // 将基于你的实际浏览器及运行环境，自动的确定babel插件及polyfill
+              resolve('@babel/preset-env'), // 将基于你的实际浏览器及运行环境，自动的确定babel插件及polyfill
               {
                 // useBuiltIns: 'usage', // @babel/plugin-transform-runtime已经转换了不用再配置
                 // corejs: {
@@ -36,12 +37,12 @@ const DEFAULT = [
                 modules: false, // 意思是不转义import语法，主要是为了tree-shaking
               },
             ],
-            '@babel/preset-react',
-            '@babel/preset-typescript',
+            resolve('@babel/preset-react'),
+            resolve('@babel/preset-typescript'),
           ],
           plugins: [
             [
-              '@babel/plugin-transform-runtime',
+              resolve('@babel/plugin-transform-runtime'),
               {
                 corejs: { version: 3, proposals: true }, // 配置会将垫片帮助函数抽离没有变量污染 推荐在类库中使用
               },

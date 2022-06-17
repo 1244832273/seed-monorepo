@@ -3,16 +3,17 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoPrefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const resolve = require.resolve;
 
 const COMMEN_CSS_LOADER = [
   {
     loader: MiniCssExtractPlugin.loader,
   },
   {
-    loader: 'css-loader',
+    loader: resolve('css-loader'),
   },
   {
-    loader: 'postcss-loader',
+    loader: resolve('postcss-loader'),
     options: {
       postcssOptions: {
         sourceMap: true,
@@ -40,7 +41,7 @@ const DEFAULT = [
           ...COMMEN_CSS_LOADER,
           // 当解析antd.less，必须写成下面格式，否则会报Inline JavaScript is not enabled错误
           {
-            loader: 'less-loader',
+            loader: resolve('less-loader'),
             options: { lessOptions: { javascriptEnabled: true } },
           },
         ],
@@ -50,10 +51,10 @@ const DEFAULT = [
         use: [
           ...COMMEN_CSS_LOADER,
           {
-            loader: 'resolve-url-loader',
+            loader: resolve('resolve-url-loader'),
           },
           {
-            loader: 'sass-loader',
+            loader: resolve('sass-loader'),
             options: {
               sourceMap: true,
             },
