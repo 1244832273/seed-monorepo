@@ -9,6 +9,7 @@ program
 program
   .description('seed指令, 歪比巴卜!')
   .command('dev', 'dev serve')
-  .command('build', 'run build');
+  .command('build', 'run build')
+  .command('create <name>', '拉取cli代码命令');
 
 program.parse(process.argv);
