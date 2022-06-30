@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 const program = require('commander');
 const inquirer = require('inquirer');
+const ora = require('ora');
+const logSymbols = require('log-symbols');
 
 const seedCreate = require('@seedltw/seed-create');
 const { chalk, logger } = require('@seedltw/message-utils');
@@ -38,7 +40,18 @@ inquirer
   .prompt(project_name ? questionDefault : [...question, ...questionDefault])
   .then(({ projectName, template }) => {
     const newProjectName = project_name || projectName;
-    seedCreate({ newProjectName, template });
+
+    let spinner = ora(chalk.blue(`下载模板: ${template}`));
+
+    spinner.start();
+
+    seedCreate(newProjectName, template)
+      .then(() => {
+        spinner.succeed();
+      })
+      .catch((err) => {
+        spinner.fail(logger.err(err));
+      });
   })
   .catch((error) => {
     logger.err(error);

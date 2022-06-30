@@ -18,7 +18,7 @@
     "@seedltw/seed-webpack-dev": "workspace:*",
     "commander": "^9.2.0",
     "inquirer": "^8.2.3",
-    "log-symbols": "^5.1.0",
-    "ora": "^6.1.0"
+    "log-symbols": "^4.1.0",
+    "ora": "^5.0.0"
   }
 }
