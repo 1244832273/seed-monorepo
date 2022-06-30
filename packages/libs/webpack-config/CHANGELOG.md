@@ -1,5 +1,11 @@
 # @seedltw/webpack-config
 
+## 0.1.5
+
+### Patch Changes
+
+- 修改 webpack 依赖
+
 ## 0.1.4
 
 ### Patch Changes

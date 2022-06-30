@@ -1,6 +1,6 @@
 {
   "name": "@seedltw/seed-webpack-dev",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "@seedltw/webpack-config": "workspace:*",
     "core-js": "^3.22.8",
     "error-overlay-webpack-plugin": "^1.1.0",
+    "webpack": "^5.72.1",
     "webpack-dev-server": "^4.8.1"
   },
   "devDependencies": {
