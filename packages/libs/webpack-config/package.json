@@ -1,6 +1,6 @@
 {
   "name": "@seedltw/webpack-config",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -29,9 +29,14 @@
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.52.2",
     "sass-loader": "^13.0.0",
-    "webpack": "^5.73.0",
     "webpack-cli": "^4.9.2",
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.73.0"
+  },
+  "peerDependencies": {
+    "webpack": "^5.73.0"
   }
 }

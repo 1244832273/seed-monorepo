@@ -1,5 +1,13 @@
 # @seedltw/seed-webpack-dev
 
+## 0.1.7
+
+### Patch Changes
+
+- 修改 webpack 依赖
+- Updated dependencies
+  - @seedltw/webpack-config@0.1.7
+
 ## 0.1.6
 
 ### Patch Changes

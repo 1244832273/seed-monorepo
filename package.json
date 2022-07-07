@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/1244832273/seed-monorepo#readme",
   "devDependencies": {
-    "@changesets/cli": "^2.22.0",
+    "@changesets/cli": "^2.23.0",
     "@seedltw/eslint-config-seed": "workspace:*",
     "rimraf": "^3.0.2"
   }
