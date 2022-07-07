@@ -1,5 +1,11 @@
 # @seedltw/webpack-config
 
+## 0.1.8
+
+### Patch Changes
+
+- 放弃了 还是放安装 2 个 webpack 吧
+
 ## 0.1.7
 
 ### Patch Changes

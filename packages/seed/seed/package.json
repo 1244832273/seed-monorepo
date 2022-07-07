@@ -1,6 +1,6 @@
 {
   "name": "@seedltw/seed",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "",
   "bin": {
     "seed": "bin/seed.js"

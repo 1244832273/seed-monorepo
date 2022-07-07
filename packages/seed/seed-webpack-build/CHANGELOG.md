@@ -1,5 +1,12 @@
 # @seedltw/seed-webpack-build
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies
+  - @seedltw/webpack-config@0.1.8
+
 ## 0.0.6
 
 ### Patch Changes
