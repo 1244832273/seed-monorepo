@@ -24,5 +24,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install pnpm -g
+      - run: npm install pnpm --location=global
+      
+      - uses: actions/checkout@v3
       - run: pnpm seed -v
