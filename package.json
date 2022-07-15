@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "aa": "seed -v",
     "release": "changeset publish --registry=https://registry.npmjs.com/",
     "changeset": "changeset",
     "versions": "changeset version",

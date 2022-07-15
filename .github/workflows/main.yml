@@ -26,5 +26,5 @@ jobs:
           node-version: 16
       - run: npm install pnpm --location=global
       - run: pnpm -v
-      - run: pnpm aa
-      - run: pnpm seed -v
+      - run: pnpm add @seedltw/seed -g
+      - run: seed -v
