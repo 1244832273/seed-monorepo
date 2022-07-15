@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: action-publish
 
 # Controls when the workflow will run
 on:
@@ -21,7 +21,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@release
+      - uses: actions/checkout@v3
+        with:
+          node-version: '14'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
