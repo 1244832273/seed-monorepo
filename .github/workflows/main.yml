@@ -15,7 +15,6 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    build:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
