@@ -33,5 +33,6 @@ jobs:
       run: pnpm install
     - name: aaaa
       run: pnpm -v
+    - name: aaaabbb
       run: pnpm seed -v
 
