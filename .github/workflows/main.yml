@@ -31,3 +31,7 @@ jobs:
         cache: 'pnpm'
     - name: Install dependencies
       run: pnpm install
+    - name: aaa
+      run: pnpm -v
+      run: pnpm seed -v
+
