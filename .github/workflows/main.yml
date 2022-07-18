@@ -35,26 +35,29 @@ jobs:
       run: |
             pnpm -v
             pnpm seed -v
+  release:
+    name: Release
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js 12.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: 12.x
+      - name: Setup Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
 
-    - name: Install Dependencies
-      run: yarn
+      - name: Install Dependencies
+        run: yarn
 
-    - name: Create Release Pull Request or Publish to npm
-      id: changesets
-      uses: changesets/action@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Publish
-      if: steps.changesets.outputs.hasChangesets == 'false'
-      # You can do something when a publish should happen.
-      run: yarn publish
+      - name: Publish
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        # You can do something when a publish should happen.
+        run: yarn publish
 
