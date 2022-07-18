@@ -1,5 +1,11 @@
 # @seedltw/eslint-config-seed
 
+## 0.1.5
+
+### Patch Changes
+
+- 6bf7e30: 发布测试
+
 ## 0.1.4
 
 ### Patch Changes

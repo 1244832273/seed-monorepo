@@ -1,5 +1,11 @@
 # @seedltw/seed-create
 
+## 0.0.2
+
+### Patch Changes
+
+- 6bf7e30: 发布测试
+
 ## 0.0.1
 
 ### Patch Changes
