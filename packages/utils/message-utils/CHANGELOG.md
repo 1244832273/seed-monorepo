@@ -1,5 +1,11 @@
 # @seedltw/message-utils
 
+## 0.0.3
+
+### Patch Changes
+
+- 6bf7e30: 发布测试
+
 ## 0.0.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @seedltw/webpack-config
 
+## 0.1.9
+
+### Patch Changes
+
+- 6bf7e30: 发布测试
+
 ## 0.1.8
 
 ### Patch Changes
