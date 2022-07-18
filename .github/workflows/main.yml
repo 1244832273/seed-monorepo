@@ -30,9 +30,12 @@ jobs:
         node-version: ${{ matrix.node }}
         cache: 'pnpm'
     - name: Install dependencies
-      run: pnpm install
-    - name: aaaa
-      run: pnpm -v
-    - name: aaaabbb
-      run: pnpm seed -v
+      run:  |
+          pnpm install
+          pnpm -v
+          npm seed -v
+    - name: versions
+      run: pnpm versions
+    - name: publish
+      run: pnpm release
 
