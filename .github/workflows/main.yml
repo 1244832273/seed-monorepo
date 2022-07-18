@@ -15,36 +15,33 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  release:
+    name: Release
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ 16 ]
     steps:
-    - uses: actions/checkout@v2
-    - uses: pnpm/action-setup@v2.2.2
-      with:
-        version: 7
-    - name: Use Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node }}
-        cache: 'pnpm'
-    - name: Install dependencies
-      run: pnpm install
-    - name: Create Release Pull Request or Publish to npm
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
           # This expects you to have a script called release which does a build for your packages and calls changeset publish
-          publish: pnpm release
+          publish: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-    - name: Send a Slack notification if a publish happens
-      if: steps.changesets.outputs.published == 'true'
-      # You can do something when a publish happens.
-      run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
+      - name: Send a Slack notification if a publish happens
+        if: steps.changesets.outputs.published == 'true'
+        # You can do something when a publish happens.
+        run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
 
