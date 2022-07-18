@@ -50,11 +50,11 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-       - name: yarn
+      - name: yarn
         run: yarn -v 
       
       - name: Install dependencies
-        run: npm i -g pnpm
+        run: npm install pnpm -g
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
@@ -65,5 +65,5 @@ jobs:
       - name: Publish
         if: steps.changesets.outputs.hasChangesets == 'false'
         # You can do something when a publish should happen.
-        run: yarn publish
+        run: pnpm publish
 
