@@ -36,13 +36,19 @@ jobs:
         run: pnpm install
 
       - name: Publish to npm
-        run: pnpm versions
-        run: pnpm changeset publish --registry=https://registry.npmjs.com/:_authToken=$NPM_TOKEN
+        run:  |
+              pnpm versions
+              pnpm changeset publish --registry=https://registry.npmjs.com/:_authToken=$NPM_TOKEN
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Send a Slack notification if a publish happens
-        if: steps.changesets.outputs.published == 'true'
-        # You can do something when a publish happens.
-        run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
-
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
