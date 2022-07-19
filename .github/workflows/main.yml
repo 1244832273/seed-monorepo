@@ -36,10 +36,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: Changeset versions
+        run: |
+          pnpm versions
+          pnpm changeset status
+
       - name: Publish to npm
-        run:  |
-            pnpm versions
-            pnpm changeset publish --registry=https://registry.npmjs.com/:_authToken=$NPM_TOKEN
+        run: pnpm changeset publish --registry=https://registry.npmjs.com/:_authToken=$NPM_TOKEN
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -59,7 +66,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          tag_name: ${{ steps.get_version.outputs.VERSION }}
+          release_name: ${{ steps.get_version.outputs.VERSION }}
           draft: true
           prerelease: false
