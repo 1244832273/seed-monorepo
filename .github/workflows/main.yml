@@ -46,7 +46,7 @@ jobs:
           pnpm versions
 
       - name: Publish to npm
-        run: pnpm changeset publish --registry=https://registry.npmjs.com/:_authToken=$NPM_TOKEN
+        run: pnpm changeset publish --otp=$NPM_TOKEN
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
