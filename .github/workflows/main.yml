@@ -56,8 +56,9 @@ jobs:
       - name: 1hahaha
         id: get_version
         uses: battila7/get-version-action@v2
-        run: echo ${{ steps.get_version.outputs.version }}
-        run: echo ${{ steps.get_version.outputs.version-without-v }}
+        run: |
+              echo ${{ steps.get_version.outputs.version }}
+              echo ${{ steps.get_version.outputs.version-without-v }}
 
       - name: Commit files
         run: |
