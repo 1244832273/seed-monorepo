@@ -42,8 +42,8 @@ jobs:
 
       - name: Changeset versions
         run: |
-          pnpm versions
           pnpm changeset status
+          pnpm versions
 
       - name: Publish to npm
         run: pnpm changeset publish --registry=https://registry.npmjs.com/:_authToken=$NPM_TOKEN
