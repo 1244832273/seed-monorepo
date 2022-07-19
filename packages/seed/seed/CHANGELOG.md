@@ -1,5 +1,11 @@
 # @seedltw/seed
 
+## 0.1.10
+
+### Patch Changes
+
+- 6e9fcc9: 测试发版
+
 ## 0.1.9
 
 ### Patch Changes
