@@ -53,6 +53,12 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
 
+      - name: 1hahaha
+        id: get_version
+        uses: battila7/get-version-action@v2
+        run: echo ${{ steps.get_version.outputs.version }}
+        run: echo ${{ steps.get_version.outputs.version-without-v }}
+
       - name: Commit files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
