@@ -43,10 +43,12 @@ jobs:
       - name: Changeset versions
         run: |
           pnpm changeset status
-          pnpm versions
+          pnpm versions --output
 
       - name: Publish to npm
-        run: pnpm changeset publish --otp=$NPM_TOKEN
+        run: |
+          pnpm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          pnpm changeset release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
