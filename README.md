@@ -24,7 +24,7 @@ plan:
 2. build打包优化配置
 3. webpack执行oneOf includ等优化
 <!-- 4. 添加git流 提交git的时候直接发版 -->
- 1): 创建新分支合并不要在release分支直接提交版本
+ 1): 创建新分支合并不要在release分支直接提交版本 changeset --empty可以创建空提交
  2): 本地先执行pnpm changeset选择升级版本
  3): 当前分支合并到release分支后执行git action工作流发版
 5. 是否改成ts写法? 每个文件配置打包命令 发版前执行build 用webpack打包?还是用rollup打包?
