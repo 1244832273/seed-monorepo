@@ -49,23 +49,11 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Get version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-
-      - name: Get version1
-        id: get_version1
-        uses: battila7/get-version-action@v2
-
-      - run: echo ${{ steps.get_version1.outputs.version }}
-
-      - run: echo ${{ steps.get_version1.outputs.version-without-v }}
-
       - name: Commit files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "Add changes ${{ steps.get_version.outputs.VERSION }} -- ${{github.ref}}" -a
+          git commit -m "Add changes ${{github.ref}}" -a
           
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -79,6 +67,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{github.ref}}
-          release_name: ${{ steps.get_version.outputs.VERSION }}
+          release_name: ${{github.ref}}
           draft: true
           prerelease: false
