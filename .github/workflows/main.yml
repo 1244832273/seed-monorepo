@@ -39,7 +39,7 @@ jobs:
       - name: Changeset versions
         id: get_status
         run: |
-          pnpm changeset status --output=STATUS
+          pnpm changeset status --output
           pnpm versions
 
       - name: Publish to npm
@@ -57,7 +57,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "Add changes ${{ steps.get_version.outputs.VERSION }} ${{ steps.get_status.outputs.STATUS }}" -a
+          git commit -m "Add changes ${{ steps.get_version.outputs.VERSION }} -- ${{github.event.pull_request.message}}" -a
           
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -70,7 +70,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.get_version.outputs.VERSION }}
+          tag_name: ${{github.event.pull_request.message}}
           release_name: ${{ steps.get_version.outputs.VERSION }}
           draft: true
           prerelease: false
