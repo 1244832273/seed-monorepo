@@ -12,59 +12,10 @@ on: [push]
 jobs:
   release:
     name: Release
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-      
-      # - name: install pnpm
-      #   uses: pnpm/action-setup@v2.2.2
-      #   with:
-      #     version: 7
-
-      # - name: Setup Node.js 16.x
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 16.x
-      #     cache: 'pnpm'
-      
-      # - name: Install dependencies
-      #   run: pnpm install
-
-      # - name: Changeset versions
-      #   run: |
-      #     pnpm changeset status
-      #     pnpm versions
-
-      # - name: Publish to npm
-      #   run: |
-      #     pnpm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-      #     pnpm release
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # - name: Commit files
-      #   run: |
-      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
-      #     git config --local user.name "github-actions[bot]"
-      #     git commit -m "发布npm版本 commit:${{github.event.pull_request.title}}" -a
-          
-      # - name: Push changes
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     branch: ${{ github.ref }}
-
-      # - name: Create Release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: ${{github.event.pull_request.title}}
-      #     release_name: ${{ github.ref }}
-      #     draft: false
-      #     prerelease: false
         
       - name: Send dingding notify
         uses: zcong1993/actions-ding@master
