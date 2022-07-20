@@ -80,9 +80,6 @@ jobs:
                 "msgtype": "markdown",
                 "markdown": {
                     "title": '🎉 DingTalk 发布 ${{ github.ref }} 🎉',
-                    "text": '#### 🎉 DingTalk 发布 ${{ github.ref }} 🎉' \n> ${{ github.actor }}提交了: ${{github.event.pull_request.title}} \n> 前往 (${{ toJSON(github.event.pull_request._links.commits) }}) 查看完整信息.'
-                },
-                "at": {
-                    "isAtAll": true
+                    "text": '#### 🎉 DingTalk 发布 ${{ github.ref }} 🎉' \n> ${{ github.actor }}提交了: ${{github.event.pull_request.title}} \n> 前往 (${{ github.event.pull_request._links.commits }}) 查看完整信息.'
                 }
             }
