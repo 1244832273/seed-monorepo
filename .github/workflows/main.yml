@@ -69,11 +69,12 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
-
+        
       - name: Send dingding notify
         uses: zcong1993/actions-ding@master
         with:
           dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
+          secret: ${{ secrets.DING_TALK_SECRET }} # if secret set, action will call API with sign
           body: |
             {
               "msgtype": "link",
