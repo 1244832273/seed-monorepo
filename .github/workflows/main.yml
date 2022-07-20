@@ -79,7 +79,10 @@ jobs:
             {
                 "msgtype": "markdown",
                 "markdown": {
-                    "title": '🎉 DingTalk 发布 ${{ github.ref }} 🎉',
-                    "text": '#### 🎉 DingTalk 发布 ${{ github.ref }} 🎉' \n> ${{ github.actor }}提交了: ${{github.event.pull_request.title}} \n> 前往 (${{ github.event.pull_request._links.commits }}) 查看完整信息.'
+                    "title": '🎉 Github action机器人 发布 ${{ github.ref }} 🎉',
+                    "text": '#### Github action机器人 发布 ${{ github.ref }} \n> ${{ github.actor }}提交了: ${{github.event.pull_request.title}} \n> 前往 (${{ github.event.pull_request._links.commits.href }}) 查看完整信息.'
+                },
+                "at": {
+                    "isAtAll": true
                 }
             }
