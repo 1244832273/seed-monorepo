@@ -69,12 +69,18 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
-      
-      - name: Send DINGDING
-        uses: visiky/dingtalk-release-notify@main
+
+      - name: Send dingding notify
+        uses: zcong1993/actions-ding@master
         with:
-          DING_TALK_TOKEN: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
-          notify_title: '🎉 DingTalk 发布 ${{ github.ref }} 🎉' # Template of nofify title message in DingTalk
-          notify_body: '## { 提交: }<hr /> { ${{github.event.pull_request.title}} } <hr />' # Template of nofify body message in DingTalk
-          notify_footer: '> 前往 (${{github.event.pull_request._links}}) 查看完整信息.' # Template of nofify footer message in DingTalk
-          at_all: false # whether to ding everybody
+          dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
+          body: |
+            {
+              "msgtype": "link",
+              "link": {
+                  "text": '## { 提交: }<hr /> { ${{github.event.pull_request.title}} } <hr /> > 前往 (${{github.event.pull_request._links}}) 查看完整信息.',
+                  "title": '🎉 DingTalk 发布 ${{ github.ref }} 🎉',
+                  "picUrl": "",
+                  "messageUrl": ""
+              }
+            }
