@@ -80,7 +80,7 @@ jobs:
                 "msgtype": "markdown",
                 "markdown": {
                     "title": '🎉 Github action机器人 发布 ${{ github.ref }} 🎉',
-                    "text": '#### Github action机器人 发布 ${{ github.ref }} \n> ${{ github.actor }}提交了: ${{github.event.pull_request.title}} \n> 前往 (${{ github.event.pull_request._links.commits.href }}) 查看完整信息.'
+                    "text": '#### Github action机器人 发布 ${{ github.ref }} \n> ${{ github.actor }}提交了: ${{github.event.pull_request.title}} \n> 前往 (https://github.com/1244832273/seed-monorepo/actions) 查看完整信息.'
                 },
                 "at": {
                     "isAtAll": true
