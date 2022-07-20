@@ -69,3 +69,12 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
+      
+      - name: Send DINGDING
+        uses: visiky/dingtalk-release-notify@main
+        with:
+          DING_TALK_TOKEN: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
+          notify_title: '🎉 DingTalk Release Notify 发布 release {release_tag} 🎉' # Template of nofify title message in DingTalk
+          notify_body: '## { title }<hr /> ![](https://gw.alipayobjects.com/zos/antfincdn/pJ5JP3Ntkd/2021-08.png) <hr /> { body } <hr />' # Template of nofify body message in DingTalk
+          notify_footer: '> 前往 [**G2Plot**]({ release_url }) 查看完整信息.' # Template of nofify footer message in DingTalk
+          at_all: false # whether to ding everybody
