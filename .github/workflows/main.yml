@@ -77,7 +77,7 @@ jobs:
           secret: ${{ secrets.DING_TALK_SECRET }} # if secret set, action will call API with sign
           body: |
             {
-              "msgtype": "link",
+              "msgtype": "sampleMarkdown",
               "link": {
                   "text": '## { 提交: }<hr /> { ${{github.event.pull_request.title}} } <hr /> > 前往 (${{github.event.pull_request._links}}) 查看完整信息.',
                   "title": '🎉 DingTalk 发布 ${{ github.ref }} 🎉',
