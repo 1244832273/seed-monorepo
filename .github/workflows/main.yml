@@ -37,9 +37,8 @@ jobs:
         run: pnpm install
 
       - name: Changeset versions
-        id: get_status
         run: |
-          pnpm changeset status --output=./changeset_status.json
+          pnpm changeset status
           pnpm versions
 
       - name: Publish to npm
@@ -54,12 +53,6 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "发布npm版本 commit:${{github.event.pull_request.title}}" -a
-
-      - name: Dump matrix 111
-        run: echo '${{ toJSON(steps.get_status) }}'
-      
-      - name: Dump matrix 111222
-        run: echo '${{<changeset_status}}'
           
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -73,6 +66,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{github.event.pull_request.title}}
-          release_name: echo '${{changeset_status}}'
-          draft: true
+          release_name: ${{github.event.pull_request.title}}
+          draft: false
           prerelease: false
