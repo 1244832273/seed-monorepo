@@ -39,7 +39,7 @@ jobs:
       - name: Changeset versions
         id: get_status
         run: |
-          pnpm changeset status --output
+          pnpm changeset status --output ./get_status.json
           pnpm versions
 
       - name: Publish to npm
@@ -53,23 +53,13 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "发布npm版本 ${{github.ref}}" -a
+          git commit -m "发布npm版本 commit:${{github.event.pull_request.title}}" -a
 
-      - name: Dump GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
-      - name: Dump job context
-        run: echo '${{ toJSON(job) }}'
-      - name: Dump steps context
-        run: echo '${{ toJSON(steps) }}'
-      - name: Dump runner context
-        run: echo '${{ toJSON(runner) }}'
-      - name: Dump strategy context
-        run: echo '${{ toJSON(strategy) }}'
-      - name: Dump matrix context
-        run: echo '${{ toJSON(matrix) }}'
       - name: Dump matrix 111
         run: echo '${{ toJSON(steps.get_status) }}'
+      
+      - name: Dump matrix 111222
+        run: echo ./get_status.json
           
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -82,7 +72,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{github.ref}}
-          release_name: ${{github.ref}}
+          tag_name: ${{github.event.pull_request.title}}
+          release_name: echo ./get_status.json
           draft: true
           prerelease: false
