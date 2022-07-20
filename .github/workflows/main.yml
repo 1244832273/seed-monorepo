@@ -59,7 +59,7 @@ jobs:
         run: echo '${{ toJSON(steps.get_status) }}'
       
       - name: Dump matrix 111222
-        run: echo ./changeset_status.json
+        run: echo '${{changeset_status.json}}'
           
       - name: Push changes
         uses: ad-m/github-push-action@master
@@ -73,6 +73,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{github.event.pull_request.title}}
-          release_name: echo ./changeset_status.json
+          release_name: echo '${{./changeset_status.json}}'
           draft: true
           prerelease: false
