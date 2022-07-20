@@ -79,7 +79,7 @@ jobs:
             {
               "msgtype": "sampleMarkdown",
               "link": {
-                  "text": '## { 提交: }<hr /> { ${{github.event.pull_request.title}} } <hr /> > 前往 (${{github.event.pull_request._links}}) 查看完整信息.',
+                  "text": '## { 提交: }<hr /> { ${{github.event.pull_request.title}} } <hr /> > 前往 (${{ toJSON(github.event.pull_request._links) }}) 查看完整信息.',
                   "title": '🎉 DingTalk 发布 ${{ github.ref }} 🎉',
                   "picUrl": "",
                   "messageUrl": "https://www.dingtalk.com/"
