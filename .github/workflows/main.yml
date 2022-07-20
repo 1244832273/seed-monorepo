@@ -39,7 +39,7 @@ jobs:
       - name: Changeset versions
         id: get_status
         run: |
-          pnpm changeset status --output ./changeset_status.json
+          pnpm changeset status --output=./changeset_status.json
           pnpm versions
 
       - name: Publish to npm
