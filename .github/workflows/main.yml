@@ -59,7 +59,7 @@ jobs:
         run: echo '${{ toJSON(steps.get_status) }}'
       
       - name: Dump matrix 111222
-        run: echo '${{changeset_status}}'
+        run: echo '${{<changeset_status}}'
           
       - name: Push changes
         uses: ad-m/github-push-action@master
