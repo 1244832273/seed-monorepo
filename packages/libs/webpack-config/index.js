@@ -8,11 +8,14 @@ const defaultPlugin = require('./plugins/defaultPlugin');
 
 const cwd = process.cwd();
 
+// seed.config配置
+const seedConfig = require(cwd + '/seed.config.js');
+
 const alias = {
-  '@': path.resolve(process.cwd(), 'src'),
-  Src: path.resolve(process.cwd(), 'src'),
-  Pages: path.resolve(process.cwd(), 'src/pages'),
-  Assets: path.resolve(process.cwd(), 'src/assets'),
+  '@': path.resolve(cwd, 'src'),
+  Src: path.resolve(cwd, 'src'),
+  Pages: path.resolve(cwd, 'src/pages'),
+  Assets: path.resolve(cwd, 'src/assets'),
 };
 
 const webpackConfigDefault = {
@@ -29,18 +32,25 @@ const webpackConfigDefault = {
     extensions: ['.ts', '.tsx', '.jsx', '.js', '.scss', 'json'], // 配置文件不带后缀名 解析顺序
     modules: [
       'node_modules',
-      path.resolve(process.cwd(), 'src'),
-      path.resolve(process.cwd(), './node_modules'),
+      path.resolve(cwd, 'src'),
+      path.resolve(cwd, './node_modules'),
     ],
   },
   module: {
-    rules: defaultLoader(),
+    rules: defaultLoader(seedConfig),
   },
   plugins: defaultPlugin(),
 };
 
 const getCompiler = (config) => {
-  const combineConfig = merge(webpackConfigDefault, config);
+  // 合并seedConfig和默认的webpack配置
+  const defaultConfig = merge(
+    webpackConfigDefault,
+    seedConfig?.webpackMergeConfig || {},
+  );
+  // 合并webpack 生产和开发独有的配置
+  const combineConfig = merge(defaultConfig, config);
+  // 生成compiler对象
   const compiler = webpcak(combineConfig);
   return compiler;
 };

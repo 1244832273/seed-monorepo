@@ -1,6 +1,7 @@
 'use strict';
 
 const babelLoader = require('./babelLoader');
+const esbuildLoader = require('./esbuildLoader');
 const cssLoader = require('./cssLoader');
 
 const DEFAULT = [
@@ -31,8 +32,14 @@ const DEFAULT = [
   },
 ];
 
-module.exports = function defaultLoader() {
+module.exports = function defaultLoader(seedConfig) {
+  // 是否使用esbuild
+  const useEsbuild = seedConfig?.useEsbuild || false;
+
   const cssLoaderList = cssLoader();
+
   const babelLoaderList = babelLoader();
-  return [...DEFAULT, ...cssLoaderList, ...babelLoaderList];
+  const esbuildLoaderList = esbuildLoader();
+  const jsLoaderList = useEsbuild ? esbuildLoaderList : babelLoaderList;
+  return [...DEFAULT, ...cssLoaderList, ...jsLoaderList];
 };
