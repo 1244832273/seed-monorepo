@@ -1,5 +1,11 @@
 # @seedltw/webpack-config
 
+## 0.1.10
+
+### Patch Changes
+
+- 2f64a83: 添加 esbuild 选项
+
 ## 0.1.9
 
 ### Patch Changes

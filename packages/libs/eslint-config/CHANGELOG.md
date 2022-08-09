@@ -1,5 +1,11 @@
 # @seedltw/eslint-config-seed
 
+## 0.1.6
+
+### Patch Changes
+
+- 2f64a83: 添加 esbuild 选项
+
 ## 0.1.5
 
 ### Patch Changes

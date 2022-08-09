@@ -1,5 +1,11 @@
 # @seedltw/message-utils
 
+## 0.0.4
+
+### Patch Changes
+
+- 2f64a83: 添加 esbuild 选项
+
 ## 0.0.3
 
 ### Patch Changes

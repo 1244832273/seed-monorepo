@@ -1,5 +1,14 @@
 # @seedltw/seed-webpack-build
 
+## 0.0.9
+
+### Patch Changes
+
+- 2f64a83: 添加 esbuild 选项
+- Updated dependencies [2f64a83]
+  - @seedltw/webpack-config@0.1.10
+  - @seedltw/message-utils@0.0.4
+
 ## 0.0.8
 
 ### Patch Changes
