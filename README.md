@@ -2,6 +2,7 @@
 libs 提供基础能力
 seed 主要功能
 utils 赋能工具
+template 模板
 
 
 pnpm install
@@ -20,7 +21,7 @@ pnpm release
 
 
 plan:
-1. babel换esbuild
+<!-- 1. babel换esbuild -->
 2. build打包优化配置
 3. webpack执行oneOf includ等优化
 <!-- 4. 添加git流 提交git的时候直接发版 -->
