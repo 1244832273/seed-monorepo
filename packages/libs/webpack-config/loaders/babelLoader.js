@@ -42,6 +42,12 @@ const DEFAULT = [
           ],
           plugins: [
             [
+              resolve('@babel/plugin-proposal-decorators'),
+              {
+                legacy: true,
+              },
+            ],
+            [
               resolve('@babel/plugin-transform-runtime'),
               {
                 corejs: { version: 3, proposals: true }, // 配置会将垫片帮助函数抽离没有变量污染 推荐在类库中使用

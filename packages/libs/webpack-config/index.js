@@ -17,7 +17,7 @@ const alias = {
 
 const webpackConfigDefault = (seedConfig) => ({
   entry: {
-    main: path.resolve(cwd, 'src/index.tsx'),
+    main: path.resolve(cwd, 'src/index'),
   },
   output: {
     filename: '[name].[contenthash].js', // 输出文件名
@@ -46,7 +46,6 @@ const webpackConfigDefault = (seedConfig) => ({
  * @return {compiler} compiler
  */
 const getCompiler = (config, configFile) => {
-
   const { webpackMergeConfig = {}, ...seedConfig } = configFile;
 
   // 合并seedConfig和默认的webpack配置
@@ -57,7 +56,7 @@ const getCompiler = (config, configFile) => {
 
   // 合并webpack 生产和开发独有的配置
   const combineConfig = merge(defaultConfig, config);
-  
+
   // 生成compiler对象
   const compiler = webpcak(combineConfig);
   return compiler;
