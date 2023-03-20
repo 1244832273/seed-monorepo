@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@seedltw/message-utils": "workspace:*",
+    "@seedltw/seed-config-utils": "workspace:*",
     "@seedltw/seed-create": "workspace:*",
     "@seedltw/seed-webpack-build": "workspace:*",
     "@seedltw/seed-webpack-dev": "workspace:*",

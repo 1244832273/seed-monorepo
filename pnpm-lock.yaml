@@ -92,6 +92,7 @@ importers:
   packages/seed/seed:
     specifiers:
       '@seedltw/message-utils': workspace:*
+      '@seedltw/seed-config-utils': workspace:^1.0.0
       '@seedltw/seed-create': workspace:*
       '@seedltw/seed-webpack-build': workspace:*
       '@seedltw/seed-webpack-dev': workspace:*
@@ -102,6 +103,7 @@ importers:
       shelljs: ^0.8.5
     dependencies:
       '@seedltw/message-utils': link:../../utils/message-utils
+      '@seedltw/seed-config-utils': link:../../utils/seed-config-utils
       '@seedltw/seed-create': link:../seed-create
       '@seedltw/seed-webpack-build': link:../seed-webpack-build
       '@seedltw/seed-webpack-dev': link:../seed-webpack-dev
@@ -148,6 +150,12 @@ importers:
       chalk: 4.1.1
     dependencies:
       chalk: 4.1.1
+
+  packages/utils/seed-config-utils:
+    specifiers:
+      '@seedltw/message-utils': workspace:^0.0.4
+    dependencies:
+      '@seedltw/message-utils': link:../message-utils
 
   tests/test-webpack:
     specifiers:

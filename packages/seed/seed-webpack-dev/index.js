@@ -16,7 +16,9 @@ const devConfig = {
     type: 'filesystem', // 使用文件缓存
   },
 };
-console.log('path.resolve(__dirname)', path.resolve(__dirname, 'public'));
+
+// console.log('path.resolve(__dirname)', path.resolve(__dirname, 'public'));
+
 const devServerOptions = {
   // static允许我们在DevServer下访问该目录的静态资源
   // 简单理解来说 当我们启动DevServer时相当于启动了一个本地服务器
@@ -29,6 +31,7 @@ const devServerOptions = {
     // disableDotRule: true,
     index: '/',
   },
+  https: true,
   open: true,
   // 默认为true
   hot: true,
@@ -38,11 +41,20 @@ const devServerOptions = {
   port: 9000,
 };
 
-module.exports = function seedWebpackDev() {
-  const HOST = process.env.HOST || 'local-ip';
+/**
+ * @description: seed dev
+ * @param {*} configFile seed.config配置文件
+ * @param {*} options package.json配置文件 https证书文件路径 devServer配置
+ * @return {*}
+ */
+module.exports = function seedWebpackDev(configFile, options) {
   const { getCompiler } = getWebpackConfig();
-  const compiler = getCompiler(devConfig);
-  const server = new WebpackDevServer(devServerOptions, compiler);
+  const compiler = getCompiler(devConfig, configFile);
+
+  // 合并配置文件server配置
+  const mergeDevserver = { ...devServerOptions, ...options.devServer };
+
+  const server = new WebpackDevServer(mergeDevserver, compiler);
   // 启动服务
   const runServer = async () => {
     console.log('Starting server...');

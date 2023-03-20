@@ -1,7 +1,7 @@
 /*
  * @Author: 鲁田文
  * @Date: 2022-06-10 18:19:16
- * @LastEditTime: 2022-06-13 14:41:49
+ * @LastEditTime: 2023-03-20 15:20:22
  * @LastEditors: 鲁田文
  * @Description: 控制台输出log
  */
@@ -9,23 +9,34 @@ const chalk = require('chalk');
 
 class Logger {
   // 成功提示
-  success(info) {
-    console.log(chalk.green(JSON.stringify(info, null, 4)));
+  success(message) {
+    console.log(chalk.green(JSON.stringify(message, null, 4)));
   }
 
   // 警告提示
-  warn(info) {
-    console.log(chalk.yellow(JSON.stringify(info, null, 4)));
+  warn(message) {
+    console.log(chalk.yellow(JSON.stringify(message, null, 4)));
   }
 
   // 错误提示
-  err(info) {
-    console.log(chalk.red(JSON.stringify(info, null, 4)));
+  err(message) {
+    console.log(chalk.red(JSON.stringify(message, null, 4)));
   }
 
   // 信息提示
-  info(info) {
-    console.log(chalk.blue(JSON.stringify(info, null, 4)));
+  message(message) {
+    console.log(chalk.blue(JSON.stringify(message, null, 4)));
+  }
+
+  /**
+   * @description: 异常并触发进程退出
+   * @param {*} message
+   * @return {*}
+   */
+  fatal(message) {
+    this.err(message);
+
+    process.exit(1);
   }
 }
 

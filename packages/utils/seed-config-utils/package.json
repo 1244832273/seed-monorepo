@@ -1,5 +1,5 @@
 {
-  "name": "seed-config",
+  "name": "@seedltw/seed-config-utils",
   "version": "1.0.0",
   "description": "操作配置文件",
   "main": "index.js",
@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@seedltw/message-utils": "workspace:*"
+  }
 }
