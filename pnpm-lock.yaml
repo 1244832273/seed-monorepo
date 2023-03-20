@@ -99,6 +99,7 @@ importers:
       inquirer: ^8.2.3
       log-symbols: ^4.1.0
       ora: ^5.0.0
+      shelljs: ^0.8.5
     dependencies:
       '@seedltw/message-utils': link:../../utils/message-utils
       '@seedltw/seed-create': link:../seed-create
@@ -108,6 +109,7 @@ importers:
       inquirer: 8.2.4
       log-symbols: 4.1.0
       ora: 5.4.1
+      shelljs: 0.8.5
 
   packages/seed/seed-create:
     specifiers:
@@ -4932,6 +4934,11 @@ packages:
       has: 1.0.3
       side-channel: 1.0.4
 
+  /interpret/1.4.0:
+    resolution: {integrity: sha1-Zlq4vE2iendKQFhOgS4+D6RbGh4=}
+    engines: {node: '>= 0.10'}
+    dev: false
+
   /interpret/2.2.0:
     resolution: {integrity: sha1-GnigtZZcQKVBbQB61vUK0nxBffk=}
     engines: {node: '>= 0.10'}
@@ -7241,6 +7248,13 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /rechoir/0.6.2:
+    resolution: {integrity: sha1-hSBLVNuoLVdC4oyWdW70OvUOM4Q=}
+    engines: {node: '>= 0.10'}
+    dependencies:
+      resolve: 1.22.1
+    dev: false
+
   /rechoir/0.7.1:
     resolution: {integrity: sha1-lHipahyhNbXoj8An8D7pLWxkVoY=}
     engines: {node: '>= 0.10'}
@@ -7684,6 +7698,16 @@ packages:
 
   /shell-quote/1.7.3:
     resolution: {integrity: sha1-qkDtrBcERbmkMeF7tiwLiBucQSM=}
+    dev: false
+
+  /shelljs/0.8.5:
+    resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==}
+    engines: {node: '>=4'}
+    hasBin: true
+    dependencies:
+      glob: 7.2.3
+      interpret: 1.4.0
+      rechoir: 0.6.2
     dev: false
 
   /side-channel/1.0.4:

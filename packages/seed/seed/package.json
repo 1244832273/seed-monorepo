@@ -19,6 +19,7 @@
     "commander": "^9.2.0",
     "inquirer": "^8.2.3",
     "log-symbols": "^4.1.0",
-    "ora": "^5.0.0"
+    "ora": "^5.0.0",
+    "shelljs": "^0.8.5"
   }
 }
