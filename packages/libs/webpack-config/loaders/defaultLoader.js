@@ -36,9 +36,9 @@ module.exports = function defaultLoader(seedConfig) {
   // 是否使用esbuild
   const useEsbuild = seedConfig?.useEsbuild || false;
 
-  const cssLoaderList = cssLoader();
+  const cssLoaderList = cssLoader(seedConfig?.lessOptions);
 
-  const babelLoaderList = babelLoader();
+  const babelLoaderList = babelLoader(seedConfig?.babelConfig);
   const esbuildLoaderList = esbuildLoader();
   const jsLoaderList = useEsbuild ? esbuildLoaderList : babelLoaderList;
   return [...DEFAULT, ...cssLoaderList, ...jsLoaderList];

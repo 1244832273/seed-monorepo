@@ -5,7 +5,7 @@ const resolve = require.resolve;
 // @babel/preset-env + entry = 注入语法的下限是 target 浏览器，上限是当前版本 core-js
 // @babel/preset-env + usage = 注入语法的下限是 target 浏览器，上限是源代码与当前版本 core-js 交集
 // @babel/plugin-transform-runtime = 当前版本整个 core-js
-const DEFAULT = [
+const getDefault = (babelInclude) => [
   {
     test: /\.(t|j)sx?$/,
     use: [
@@ -57,10 +57,11 @@ const DEFAULT = [
         },
       },
     ],
-    include: [path.resolve(process.cwd(), './src')],
+    include: [path.resolve(process.cwd(), './src'), ...babelInclude],
   },
 ];
 
-module.exports = function babelLoader() {
-  return DEFAULT;
+module.exports = function babelLoader(babelConfig = {}) {
+  const { babelInclude } = babelConfig;
+  return getDefault(babelInclude);
 };

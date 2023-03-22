@@ -28,7 +28,7 @@ const COMMEN_CSS_LOADER = [
   },
 ];
 
-const DEFAULT = [
+const getCssLoader = (lessOptions) => [
   {
     oneOf: [
       {
@@ -42,7 +42,9 @@ const DEFAULT = [
           // 当解析antd.less，必须写成下面格式，否则会报Inline JavaScript is not enabled错误
           {
             loader: resolve('less-loader'),
-            options: { lessOptions: { javascriptEnabled: true } },
+            options: {
+              lessOptions: { javascriptEnabled: true, ...lessOptions },
+            },
           },
         ],
       },
@@ -65,6 +67,6 @@ const DEFAULT = [
   },
 ];
 
-module.exports = function cssLoader() {
-  return DEFAULT;
+module.exports = function cssLoader(lessOptions) {
+  return getCssLoader(lessOptions);
 };
