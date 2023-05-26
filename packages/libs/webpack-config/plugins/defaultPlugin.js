@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin'); // webpack5不提供polyfill 要自己加
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 自动清空打包目录 webpack5 不需要配置output clean就行
@@ -19,6 +19,7 @@ const DEFAULT = [
   }),
   // new CleanWebpackPlugin(),
   new WebpackBar(),
+  new NodePolyfillPlugin(),
 ];
 
 module.exports = function defaultPlugins() {
